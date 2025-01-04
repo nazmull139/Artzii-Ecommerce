@@ -37,10 +37,42 @@ const CartModal = ({products , isOpen , onClose}) => {
 
  </button></p>
 </div>
-) :
 
 
+) : !user ? (
+    
+   
+<div className={`fixed z-[1000] inset-0 bg-black bg-opacity-80 transition-opacity ${isOpen? "opacity-100" : "opacity-0 pointer-events-none"}`}
+style={{transition:'opacity-300ms'}}>
 
+       <div className={`fixed right-0 top-0 md:w-1/3 w-full bg-white h-full overflow-y-auto transition-transform ${isOpen ? "translate-x-0 ":"-translate-x-full"}`} 
+       style={{transition:'transform 300ms cubic-bezier(0.25 , 0.46, 0.45 , 0.94)'}}>
+
+           <div className='p-4 mt-4'>
+
+               <div className='flex justify-between items-center mb-4'>
+
+                    <h4 className='text-xl font-semibold'>Your Cart</h4>
+               <button
+                   onClick={()=> onClose()}
+
+               className='text-gray-600 hover:text-gray-900'><i className="ri-xrp-fill bg-black p-1 text-white"></i></button>
+               </div>
+                        <p className="mb-2 font-semibold  text-center">
+                            Please log in to access the Cart
+                            <button className="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 mx-2 rounded">
+                            <Link to="/login">Log In</Link>
+                            </button>
+                        </p>
+               </div>
+                  
+               </div>
+          
+               </div>
+               
+           
+
+):
 
 (
     <div className={`fixed z-[1000] inset-0 bg-black bg-opacity-80 transition-opacity ${isOpen? "opacity-100" : "opacity-0 pointer-events-none"}`}
