@@ -60,8 +60,8 @@ const authApi = createApi({
                 url: "/users",
                 method: 'GET'
             }),
-            providesTags: ["Users"],
-            refetchOnMount: true,
+           providesTags: ["Users"], 
+          refetchOnMountOrArgChange: true,
             
         }),
 
