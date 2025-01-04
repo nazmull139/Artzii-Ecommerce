@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Accessory from './categoryWise/accessories';
-import Cosmetic from './categoryWise/cosmetic';
+import Cosmetic from './categoryWise/Cosmetic';
 import Dress from './categoryWise/dress';
 import Jewellary from './categoryWise/jewellary';
 
