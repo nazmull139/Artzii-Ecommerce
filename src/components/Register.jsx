@@ -30,13 +30,14 @@ const Register = () => {
             email, 
             password
         }
-       try {
+    /*   try {
             await registerUser(data).unwrap();
             alert("Registration Successful");
             navigate('/login')    
        } catch (error) {
         setMessage("registration failed");
-       }
+       }*/
+        console.log("Registration Successfull",data);
     }
 
   return (
