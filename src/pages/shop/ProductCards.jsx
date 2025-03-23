@@ -20,7 +20,7 @@ const ProductCards = ({products}) => {
       currency: "BDT"
     });
     dispatch(addToCart(product));
-
+    console.log( product.name)
   }
 
 
