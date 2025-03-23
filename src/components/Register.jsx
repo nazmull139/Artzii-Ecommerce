@@ -39,7 +39,7 @@ const Register = () => {
             ReactPixel.track("CompleteRegistration", {
             content_name: "User Registration",
             status: "Success",
-            email: email
+          
         });
          
        } catch (error) {
