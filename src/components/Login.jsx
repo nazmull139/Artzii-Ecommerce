@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useLoginUserMutation } from '../redux/features/auth/authApi';
 import { setUser } from '../redux/features/auth/authSlice';
 import ReactPixel from "react-facebook-pixel";
+
 const Login = () => {
     const [message , setMessage] = useState('');
     const [email , setEmail] = useState('');
@@ -29,12 +30,14 @@ const Login = () => {
                 const {token,user}= response;
                 dispatch(setUser({user}));
                 alert('Login Successful');
-                navigate('/');
-                ReactPixel.track("CompleteLogin", {
+            
+            ReactPixel.track("CompleteLogin", {
             content_name: "User Login",
             status: "Success",
             email: email
         });
+                navigate('/');
+              
             
         } catch (error) {
             setMessage("Please enter a valid email or password or verify your email first")
