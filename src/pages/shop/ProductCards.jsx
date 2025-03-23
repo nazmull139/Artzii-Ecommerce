@@ -2,6 +2,7 @@ import { useDispatch } from 'react-redux';
 import { Link } from "react-router-dom";
 import RatingStars from "../../components/RatingStars";
 import { addToCart } from '../../redux/features/cart/cartSlice';
+import ReactPixel from "react-facebook-pixel";
 
 const ProductCards = ({products}) => {
 //console.log("cards",products)
@@ -11,7 +12,13 @@ const ProductCards = ({products}) => {
   const dispatch = useDispatch();
 
   const handleAddToCart = (product) => {
-
+      ReactPixel.track("AddToCart", {
+      content_name: product.name,
+      content_ids: [product._id],
+      content_type: "product",
+      value: product.price,
+      currency: "BDT"
+    });
     dispatch(addToCart(product));
 
   }
