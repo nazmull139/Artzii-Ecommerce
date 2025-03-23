@@ -34,15 +34,18 @@ const Register = () => {
      try {
             await registerUser(data).unwrap();
             alert("Registration Successful");
-            navigate('/login')    
-       } catch (error) {
-        setMessage("registration failed");
-       }
-          ReactPixel.track("CompleteRegistration", {
+            navigate('/login') 
+         
+            ReactPixel.track("CompleteRegistration", {
             content_name: "User Registration",
             status: "Success",
             email: email
         });
+         
+       } catch (error) {
+        setMessage("registration failed");
+       }
+        
         console.log("Registration Successfull",data);
     }
 
