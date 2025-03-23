@@ -34,7 +34,7 @@ const Login = () => {
             ReactPixel.track("CompleteLogin", {
             content_name: "User Login",
             status: "Success",
-            email: email
+         
         });
                 navigate('/');
               
