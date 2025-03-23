@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useRegisterUserMutation } from '../redux/features/auth/authApi';
+import ReactPixel from "react-facebook-pixel";
 
 const Register = () => {
     const [message , setMessage] = useState('');
@@ -30,13 +31,18 @@ const Register = () => {
             email, 
             password
         }
-    /*   try {
+     try {
             await registerUser(data).unwrap();
             alert("Registration Successful");
             navigate('/login')    
        } catch (error) {
         setMessage("registration failed");
-       }*/
+       }
+          ReactPixel.track("CompleteRegistration", {
+            content_name: "User Registration",
+            status: "Success",
+            email: email
+        });
         console.log("Registration Successfull",data);
     }
 
